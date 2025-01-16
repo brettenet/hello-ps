@@ -29,15 +29,21 @@
 
 1. Clone the repository.
 2. Navigate to the project directory.
-3. Run the following command to start the services:
+3. Create .env file.
+
+    ```sh
+    cp .env.example .env
+    ```
+
+4. Run the following command to start the services:
 
     ```sh
     docker-compose up --build
     ```
 
-4. Access the services:
-    - Service 1: `http://localhost:5000/api/message`
-    - Service 2: `http://localhost:5001/api/get-string`
+5. Access the services:
+    - Client: `http://localhost:5000/api/message`
+    - Server: `http://localhost:5001/api/get-string`
 
 ### Stopping the Application
 

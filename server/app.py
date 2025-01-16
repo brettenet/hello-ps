@@ -9,11 +9,15 @@ load_dotenv()
 app = Flask(__name__)
 
 def get_db_connection():
+    db = os.getenv("POSTGRES_DB")
+    user = os.getenv("POSTGRES_USER")
+    password = os.getenv("POSTGRES_PASSWORD")
+
     conn = psycopg2.connect(
         host="postgres",
-        database=os.getenv("POSTGRES_DB", "postgres"),
-        user=os.getenv("POSTGRES_USER", "postgres"),
-        password=os.getenv("POSTGRES_PASSWORD", "password")
+        database=db,
+        user=user,
+        password=password
     )
     return conn
 
